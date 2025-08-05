@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <span class="hamburger-icon">☰</span>
+                </button>
+                <h1 class="dashboard-title">Admin Dashboard</h1>
+                <div class="header-actions">
+                    <div class="user-profile">
+                        <span class="user-avatar">👤</span>
+                        <span class="user-name">Admin User</span>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">
+                            <span class="nav-icon">🏠</span>
+                            <span class="nav-label">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <span class="nav-icon">👥</span>
+                            <span class="nav-label">Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <span class="nav-icon">📊</span>
+                            <span class="nav-label">Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <span class="nav-icon">⚙️</span>
+                            <span class="nav-label">Settings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <span class="nav-icon">🚪</span>
+                            <span class="nav-label">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Metrics Cards -->
+            <section class="metrics-section">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-icon">👥</span>
+                            <span class="metric-trend up">+5.2%</span>
+                        </div>
+                        <div class="metric-content">
+                            <h3 class="metric-title">Total Users</h3>
+                            <p class="metric-value">12,543</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-icon">💰</span>
+                            <span class="metric-trend up">+12.3%</span>
+                        </div>
+                        <div class="metric-content">
+                            <h3 class="metric-title">Sales</h3>
+                            <p class="metric-value">$45,892</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-icon">📦</span>
+                            <span class="metric-trend down">-2.1%</span>
+                        </div>
+                        <div class="metric-content">
+                            <h3 class="metric-title">Orders</h3>
+                            <p class="metric-value">1,284</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-icon">📈</span>
+                            <span class="metric-trend up">+8.7%</span>
+                        </div>
+                        <div class="metric-content">
+                            <h3 class="metric-title">Revenue</h3>
+                            <p class="metric-value">$98,765</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts Section -->
+            <section class="charts-section">
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <h3 class="chart-title">Monthly Revenue</h3>
+                        <div class="chart-wrapper" style="position: relative; height: 300px;">
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h3 class="chart-title">User Growth</h3>
+                        <div class="chart-wrapper" style="position: relative; height: 300px;">
+                            <canvas id="userChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Table -->
+            <section class="table-section">
+                <div class="table-container">
+                    <h3 class="table-title">Recent Users</h3>
+                    <div class="table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>John Doe</td>
+                                    <td>john@example.com</td>
+                                    <td>Admin</td>
+                                    <td><span class="status status--success">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Jane Smith</td>
+                                    <td>jane@example.com</td>
+                                    <td>User</td>
+                                    <td><span class="status status--success">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Bob Johnson</td>
+                                    <td>bob@example.com</td>
+                                    <td>Editor</td>
+                                    <td><span class="status status--error">Inactive</span></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Alice Brown</td>
+                                    <td>alice@example.com</td>
+                                    <td>User</td>
+                                    <td><span class="status status--success">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Charlie Wilson</td>
+                                    <td>charlie@example.com</td>
+                                    <td>Admin</td>
+                                    <td><span class="status status--success">Active</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
